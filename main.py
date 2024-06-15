@@ -19,9 +19,6 @@ def draw():
     for rect in rects:
         rect.draw()
 
-width, height = 10, 10
-scale = 10.0
-seed = 42
 
 def generate_maze():    
     for i in range(screen_width // 50):
