@@ -24,9 +24,12 @@ def generate_maze():
     max_j = screen_height // 50
     first_gate = random.randint(0, max_j - 1)
     second_gate = random.randint(0, max_j - 1)
+    rott = 1
     for i in range(max_i - 1):
         for j in range(max_j):
-            rott = random.randint(0, 1)
+            chance = random.randint(0, 6)
+            if(chance == 2):
+                rott = rott ^ 1
             if(i == 0 and first_gate == j or i == 0 and first_gate + 1 == j or i == max_i-2 and second_gate == j or i == max_i-2 and second_gate + 1 == j):
                 rott = 1
                 rect = Rect(25 - 20 * rott + i * 53, rott * 20  + j * 50,10, 70, rott, RED)
